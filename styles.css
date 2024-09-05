@@ -9,13 +9,14 @@ body {
 header {
     background: url('./images/IA-header.png') no-repeat center center/cover; /* Ajusta el fondo */
     color: #fff;
-    padding: 4rem 0; /* Aumenta el padding para mayor altura del header */
+    padding: 4rem 1rem; /* Aumenta el padding para mayor altura del header */
     text-align: center;
     position: relative; /* Asegura que el texto se posicione bien */
 }
 
 .header-content {
     display: flex;
+    flex-direction: column; /* Permite que el texto se ajuste en pantallas más pequeñas */
     justify-content: center;
     align-items: center;
     height: 100%; /* Asegúrate de que el contenedor del texto ocupe toda la altura del header */
@@ -30,8 +31,10 @@ header {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Agrega sombra al texto para mejor legibilidad */
 }
 
+/* Estilos para el contenedor */
 .container {
-    width: 80%;
+    width: 90%; /* Aumenta el ancho del contenedor para pantallas más pequeñas */
+    max-width: 1200px; /* Limita el ancho máximo para pantallas grandes */
     margin: auto;
     overflow: hidden;
     padding-bottom: 6rem; /* Espacio para el footer */
@@ -42,7 +45,7 @@ article {
 }
 
 article img {
-    width: 80%; /* Reduce el tamaño de las imágenes */
+    width: 100%; /* Ajusta el tamaño de las imágenes al ancho del contenedor */
     height: auto;
     max-height: 400px; /* Ajusta la altura máxima de las imágenes */
     object-fit: cover; /* Mantiene la proporción de la imagen */
@@ -50,6 +53,7 @@ article img {
     margin: 1rem auto; /* Centra las imágenes y agrega espacio alrededor */
 }
 
+/* Estilos para el footer */
 footer {
     background-color: #333;
     color: #fff;
@@ -65,4 +69,33 @@ footer {
 /* Ajusta el tamaño del texto en los párrafos */
 article p {
     font-size: 1.1rem; /* Aumenta el tamaño del texto para mejor legibilidad */
+}
+
+/* Media queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .header-content h2 {
+        font-size: 1.8rem; /* Reduce el tamaño del texto en pantallas pequeñas */
+    }
+    
+    .container {
+        width: 95%; /* Aumenta el ancho del contenedor para pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 2rem 1rem; /* Reduce el padding del header en pantallas más pequeñas */
+    }
+
+    .header-content h2 {
+        font-size: 1.5rem; /* Reduce aún más el tamaño del texto en pantallas muy pequeñas */
+    }
+
+    article p {
+        font-size: 1rem; /* Ajusta el tamaño del texto en párrafos para pantallas pequeñas */
+    }
+
+    article img {
+        max-height: 300px; /* Reduce la altura máxima de las imágenes en pantallas pequeñas */
+    }
 }
